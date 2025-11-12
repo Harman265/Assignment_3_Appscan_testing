@@ -1,9 +1,11 @@
 name: "HCL AppScan CodeSweep Scan"
+
 on:
-push:
+  push:
     branches: [main]
   pull_request:
-    types: [opened,synchronize]
+    types: [opened, synchronize]
+
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -12,7 +14,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Run AppScan CodeSweep
         uses: HCL-TECH-SOFTWARE/appscan-codesweep-action@v2.1
-    env: 
-      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
