@@ -9,6 +9,7 @@ db_config = {
 }
 
 def get_user_input():
+    # Basic input function
     user_input = input('Enter your name: ')
     return user_input
 
